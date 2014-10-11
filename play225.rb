@@ -6,11 +6,11 @@ class Play225 < Formula
   url "http://downloads.typesafe.com/play/2.2.5/play-2.2.5.zip"
   sha1 "e4358fbf77e81de83bd2abbddf14af10d3cff15b"
 
-  # conflicts_with "sox", :because => "both install `play` binaries"
+  conflicts_with "sox", :because => "both install `play` binaries"
 
 
   # depends_on "cmake" => :build
-  depends_on :x11 # if your formula requires any X11/XQuartz components
+  # depends_on :x11 # if your formula requires any X11/XQuartz components
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
