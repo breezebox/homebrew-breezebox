@@ -8,24 +8,15 @@ class Play225 < Formula
 
   conflicts_with "sox", :because => "both install `play` binaries"
 
-
-  # depends_on "cmake" => :build
-  # depends_on :x11 # if your formula requires any X11/XQuartz components
-
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
+    # system "./framework/build", "publish-local" if build.head?
 
-    # Remove unrecognized options if warned by configure
-    # system "./configure", "--disable-debug",
-    #                      "--disable-dependency-tracking",
-    #                      "--disable-silent-rules",
-    #                      "--prefix=#{prefix}"
-    # system "cmake", ".", *std_cmake_args
-    # system "make", "install" # if this fails, try separate make/make install steps
+    # remove Windows .bat files
+    rm_rf Dir['**/*.bat']
+    # rm Dir["#{buildpath}/**/*.bat"] if build.head?
 
-    rm_rf Dir["**/*.bat"]
-    libexec.install Dir["*"]
-    bin.install_symlink libexec/"play"
+    libexec.install Dir['*']
+    bin.install_symlink libexec/'play' => "play2.2.5"
   end
 
 end
