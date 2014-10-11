@@ -4,7 +4,7 @@ require "formula"
 class Play225 < Formula
   homepage "http://www.playframework.org/"
   url "http://downloads.typesafe.com/play/2.2.5/play-2.2.5.zip"
-  sha1 "73b7249fc06c378d153ec7fd5c9389621491a9f9"
+  sha1 "e4358fbf77e81de83bd2abbddf14af10d3cff15b"
 
   # conflicts_with "sox", :because => "both install `play` binaries"
 
